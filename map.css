@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'CooperMdBT';
+  src: url('assets/CooperMdBT-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --cream:      #F2EAD8;
+  --green-dark: #2E4028;
+  --red:        #CC5252;
+  --sage:       #7A9B70;
+  --peach:      #D4845A;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--green-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  width: calc(100% - 4rem);
+  max-width: 1200px;
+  padding: 0.75rem 0 0.25rem;
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-family: 'CooperMdBT', serif;
+  color: var(--green-dark);
+  margin: 0;
+  font-size: 2rem;
+}
+
+header label {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--green-dark);
+  text-align: right;
+  min-width: 20rem;
+}
+
+#selected-time {
+  display: block;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+#any-time {
+  display: block;
+  color: var(--sage);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+#time-slider {
+  display: block;
+  width: 100%;
+  margin: 0.25rem 0;
+  accent-color: var(--peach);
+}
+
+#map {
+  position: relative;
+  width: calc(100% - 4rem);
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 2rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+#map svg {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#map svg circle {
+  fill-opacity: 0.6;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: calc(100% - 4rem);
+  max-width: 1200px;
+  margin-block: 0.6rem 1rem;
+  font-size: 0.85rem;
+}
+
+.legend-label {
+  font-family: 'CooperMdBT', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--green-dark);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.legend > div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--green-dark);
+}
+
+.legend > div::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--swatch);
+  flex-shrink: 0;
+}

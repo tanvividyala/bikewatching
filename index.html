@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bikewatching</title>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="map.css">
   <script src="map.js" type="module"></script>
 </head>
 <body>
+  <header>
+    <h1>Bikewatching</h1>
+    <label>
+      Filter by time:
+      <input type="range" id="time-slider" min="-1" max="1440" value="-1" step="1">
+      <time id="selected-time"></time>
+      <em id="any-time">(any time)</em>
+    </label>
+  </header>
+  <div id="map">
+    <svg></svg>
+  </div>
+  <div class="legend">
+    <span class="legend-label">Legend:</span>
+    <div style="--swatch: #7A9B70">More departures</div>
+    <div style="--swatch: #D98453">Balanced</div>
+    <div style="--swatch: #B8403F">More arrivals</div>
+  </div>
 </body>
 </html>
